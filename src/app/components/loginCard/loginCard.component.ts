@@ -29,7 +29,7 @@ export class LoginCardComponent implements OnInit {
   roles: string[] = [];
   errMsj: string = 'usuario o contraseña incorrecta';
 
-
+  
   get Password() {
     return this.form.get("password");
   }
@@ -118,6 +118,8 @@ export class LoginCardComponent implements OnInit {
     }
   }
 
+
+  
   private handleSuccessfulLogin(data: any) {
     this.session.set(true);
     this.tokenService.setToken(data.token);
@@ -127,9 +129,6 @@ export class LoginCardComponent implements OnInit {
   
     this.showSuccessToast(data.nombreUsuario);
   
-    setTimeout(function () {
-      window.location.reload();
-    }, 5000);
   }
 
 

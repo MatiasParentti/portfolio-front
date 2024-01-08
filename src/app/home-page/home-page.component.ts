@@ -32,7 +32,10 @@ export default class HomePageComponent implements OnInit {
     constructor(private tokenService: TokenService) { 
 
     }
-    
+   
+      ngDoCheck(){
+        this.checkSession();
+      }
 
     ngOnInit(): void {
        this.checkSession();
