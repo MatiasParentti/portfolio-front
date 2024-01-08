@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Profile } from '../../model/profile';
 import { ProfileService } from '../../services/profile.service';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
     selector: 'app-about',
@@ -26,6 +27,8 @@ export class AboutComponent {
     constructor(private profileService: ProfileService) {
 
     }
+
+    
 
     btnNewExp() {
         if (this.edit == false) {

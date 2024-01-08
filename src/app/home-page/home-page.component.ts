@@ -7,15 +7,15 @@ import { LoginComponent } from '../components/login/login.component';
 import { BannerHomeComponent } from '../components/banner-home/banner-home.component';
 import { AboutComponent } from '../components/about/about.component';
 import { TokenService } from '../services/token.service';
-import { HttpClientModule } from '@angular/common/http';
 import { EducationComponent } from '../components/education/education.component';
+import { CertificationComponent } from '../components/certification/certification.component';
 
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     imports: [
-        CommonModule, RouterOutlet, FooterComponent, NavBarComponent, LoginComponent, BannerHomeComponent, AboutComponent, EducationComponent
+        CommonModule, RouterOutlet, FooterComponent, NavBarComponent, LoginComponent, BannerHomeComponent, AboutComponent, EducationComponent, CertificationComponent
     ],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css',
@@ -28,18 +28,18 @@ export default class HomePageComponent implements OnInit {
     roles!: string[];
     isAdmin = signal(false)
 
-   
-    constructor(private tokenService: TokenService) { 
+
+    constructor(private tokenService: TokenService) {
 
     }
-   
-      ngDoCheck(){
+
+    ngDoCheck() {
         this.checkSession();
-      }
+    }
 
     ngOnInit(): void {
-       this.checkSession();
-      
+        this.checkSession();
+
     }
 
     private checkSession(): void {
@@ -51,6 +51,6 @@ export default class HomePageComponent implements OnInit {
             this.isAdmin.set(this.roles.includes('ROLE_ADMIN'));
         }
     }
-    
+
 
 }
