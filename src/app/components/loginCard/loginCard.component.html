@@ -1,0 +1,52 @@
+<div class="row ">
+    <div class=" col-1 col-md-3 col-lg-0 "></div>
+    <div class="loginCard col-10 col-md-6 col-lg-12">
+
+        <div class="entry"></div>
+
+        <div>
+            <form [formGroup]="form" (ngSubmit)="onSession($event)">
+
+                <div class="mb-3">
+                    <label for="user" class="form-label">user</label>
+                    <input
+                        [ngStyle]="{'border-color':(User?.errors && User?.touched) ? 'tomato' : '#736b5e', 'color':(User?.errors && User?.touched) ? 'tomato' : 'whitesmoke' }"
+                        type="text" class="form-control" id="user" formControlName="user" autocomplete="username" />
+                    <div *ngIf="User?.errors  && User?.touched">
+                        <p *ngIf="User?.hasError('required')" class="error mt-1">
+                            El User es requerido.
+                        </p>
+                        <p *ngIf="User?.errors?.['minlength']" class="error mt-1">
+                            El User debe ser de 5 o más caracteres.
+                        </p>
+                        <p *ngIf="User?.errors?.['maxlength']" class="error mt-1">
+                            El User debe ser menor a 12 caracteres.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">password</label>
+                    <input
+                        [ngStyle]="{'border-color':(Password?.errors && Password?.touched) ? 'tomato' : '#736b5e','color':(Password?.errors && Password?.touched) ? 'tomato' : 'whitesmoke'}"
+                        type="password" class="form-control" id="password" formControlName="password"
+                        autocomplete="current-password" />
+                    <div *ngIf="Password?.errors  && Password?.touched">
+                        <p *ngIf="Password?.hasError('required')" class="error mt-1">
+                            El password es requerido.
+                        </p>
+                        <p *ngIf="Password?.errors?.['minlength']" class="error mt-1">
+                            El password debe ser de 8 o más caracteres.
+                        </p>
+                    </div>
+                </div>
+                <button type="submit" class="buttonLogin" [disabled]="Password?.errors"
+                    [disabled]="User?.errors">Init</button>
+            </form>
+        </div>
+
+
+    </div>
+    <div class="col-1 col-md-3 col-lg-0 "></div>
+
+</div>

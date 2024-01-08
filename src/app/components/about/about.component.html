@@ -1,0 +1,46 @@
+@defer (on timer (1000)) {
+
+@for (profile of profiles; track $index) {
+
+<div class="about">
+  <div class="headerEdit">
+    <div class="titleSection">
+      <h4>Sobre mi</h4><img
+        src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M13 7a2 2 0 0 1 2 2v12l-5 -3l-5 3v-12a2 2 0 0 1 2 -2h6z' /%3e%3cpath d='M9.265 4a2 2 0 0 1 1.735 -1h6a2 2 0 0 1 2 2v12l-1 -.6' /%3e%3c/svg%3e"
+        alt="">
+    </div>
+    @if (isAdmin) {
+    <div class="editCont" routerLink="/user">
+      <img
+        src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3' /%3e%3cpath d='M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3' /%3e%3cline x1='16' y1='5' x2='19' y2='8' /%3e%3c/svg%3e"
+        alt="">
+    </div>
+    }
+  </div>
+  <div class="entry"></div>
+  <div class="row myAbout">
+    <div class="col-12 col-lg-4 fotoPerfilCont mt-1">
+      <img class="fotoPerfil" src="{{profile.imageUrl}}" alt="perfil" />
+    </div>
+    <div class="col-12 col-lg-8 mt-1">
+      <h3 class="aboutSubtitle">I'am {{profile.name}}</h3>
+      <div>
+        <p class="aboutText">
+          {{profile.about}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+}
+
+}@placeholder {
+
+
+<div class="about">
+  <p>Cargando...</p>
+</div>
+
+}

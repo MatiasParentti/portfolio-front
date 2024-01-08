@@ -1,0 +1,226 @@
+
+
+.about {
+  margin-top: 10px;
+  color:#272727;
+  margin-left: 10rem;
+  margin-right: 10rem;
+    background: #fff;
+    border: 1px solid #dde0e5;
+    box-shadow: 0 2px 20px rgba(212,216,232,.52);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
+}
+
+.card{
+  font-size: medium;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  background: transparent;
+  transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 6px -2px rgba(0, 0, 0, 0.13);
+  border: 1px solid #f2f6fb;
+}
+.entry {
+  border-top: 1px solid #e9eef5;
+  padding: 1rem  0;
+  margin-top: 1rem;
+}
+
+svg{
+  height: 20px;
+ width: 20px;
+ 
+}
+.btnDown{
+  right: 0;
+  margin: 0.5rem;
+
+}
+.btnDown img{
+height: 25px;
+width: 25px;
+}
+.buttonsWork{
+padding: 20px;
+display: flex;
+justify-content: space-between;
+}
+
+.btnWork{
+  border: none;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: #52d053 ;
+  z-index: 1;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+ }
+
+ .btnSpan {
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 1px solid #52d053;
+   }
+ .btnSpan::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+
+ }
+ 
+ .btnWork:hover .btnSpan::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: #52d053 ;
+  
+ }
+ .btnWork :hover {
+
+  color: #fff;
+  
+}
+
+.headerEdit{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.editCont svg{
+
+  margin-top: 20px;
+}
+
+
+a {
+  color:  #272727;
+  text-decoration: none;
+}
+
+ 
+ .btnWork:active .btnSpan::before {
+  background: #52d053 ;
+ }
+
+ .btnsEdit{
+  display: flex;
+  
+ justify-content: right;
+
+ margin-top: 1rem;
+}
+.btnsEdit svg{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  width: 25px;
+  height: 25px;
+}
+.btnsEdit p{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+}
+.btnsEdit div{
+  display: flex;}
+  .form-control{
+    background-color:#FFFFFF;;
+    color: #272727 !important;
+    border: 1px solid #e9eef5;
+  }
+
+  .btnGit{
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+  }
+  .btnGit img{
+    width: 25px;
+    height: 25px;
+  }
+
+  .error p{
+    color: tomato;
+    margin-top: 10px;
+  }
+  .button{
+    display: flex;
+    background: transparent;
+    color:  #272727;
+    border: none;
+  }
+  .input-group-sm{
+    margin-top:0.5rem ;
+  }
+
+  .headerEdit img{
+    width: 25px;
+    height: 25px;
+    margin-top: 16px;
+  }
+    .titleSection{
+      display: flex;
+      justify-content: center;
+    }
+    .btnsEdit  img{
+      width: 25px;
+      height: 25px;
+      margin-top: 16px;
+    }
+
+   .delete img{
+      width: 25px;
+      height: 25px;
+     
+    }
+    .delete {
+      padding: 10px;
+     
+    }
+
+
+@media screen and (max-width: 990px) {
+
+  .about {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  
+  .about {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+ 
+}
+
+@media screen and (max-width: 575px) {
+ 
+  .about {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+
+  
+}

@@ -1,0 +1,36 @@
+
+.loginCard {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #dde0e5;
+  padding: 2rem;
+  transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
+color:  #272727;
+justify-self: center;
+}
+.error{
+  color: tomato;
+}
+
+.form-control{
+  background-color:#fff;
+  border-color: #736b5e;
+  color:  #272727 !important;
+}
+.entry {
+  border-top: 1px solid #e9eef5;
+  padding: 1rem 0;
+  margin-top:  1rem ;
+}
+.buttonLogin {
+  display: inline-block;
+  background-color: #52d053;
+  color: #fff !important;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  border: none;
+}

@@ -1,0 +1,17 @@
+<app-nav-bar></app-nav-bar>
+
+@if (session()) {
+
+<div class="container ">
+    <app-banner-home></app-banner-home>
+    <app-about [session]="session()" [isAdmin]="isAdmin()"></app-about>
+    <app-education [session]="session()" [isAdmin]="isAdmin()"></app-education>
+</div>
+
+
+
+}@else {
+
+<app-login></app-login>
+
+}

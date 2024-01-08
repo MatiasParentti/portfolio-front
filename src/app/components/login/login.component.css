@@ -1,0 +1,119 @@
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size:  .938rem;
+  font-weight: 500;
+  color:  #272727;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home {
+  background-color:  #f7f8fc;
+  padding: 9rem 0 2rem;
+  height: 100vh;
+  display: grid;
+  color:  #272727;
+}
+
+.homeContainer {
+  display: grid;
+  align-content: center;
+  row-gap: 2.5rem;
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.homeData {
+  text-align: center;
+}
+
+.homeTitle {
+  font-size:2.375rem;
+  margin: .75rem 0;
+}
+
+.homeButton {
+  margin-top: 2rem;
+  display:inline-flex;
+  background-color: hsl(38, 8%, 8%);
+  color: #fff;
+  padding: .80rem 1.5rem;
+  border-radius: 3rem;
+  transition: .4s;
+}
+
+.homeButton svg{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.homeButton:hover {
+  box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2);
+}
+
+.homeFooter {
+  display: flex;
+  justify-content: center;
+  column-gap: .5rem;
+  font-size:  .75rem;
+  align-self: flex-end;
+  margin-top: 2rem;
+ 
+}
+
+
+@media screen and (max-width: 320px) {
+  .home {
+    padding-top: 7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .homeContainer {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 2rem;
+  }
+  .homeData {
+    text-align: initial;
+  }
+ 
+ 
+}
+
+@media screen and (min-width: 1048px) {
+  .homeContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 2048px) {
+  .main{
+    zoom: 1.7;
+  }
+
+  .home {
+    height: initial;
+    row-gap: 4rem;
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  .main{
+    zoom: 3.1;
+  }
+}

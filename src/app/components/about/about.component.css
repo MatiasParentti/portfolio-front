@@ -1,0 +1,144 @@
+
+.about {
+  margin-top: 10px;
+  color:  #272727;
+  margin-left: 10rem;
+  margin-right: 10rem;
+    background: #fff;
+    border: 1px solid #dde0e5;
+    box-shadow: 0 2px 20px rgba(212,216,232,.52);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
+}
+
+.aboutText {
+  color: #272727;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+.aboutSubtitle {
+  margin-bottom: 1rem;
+  color: #272727;
+}
+
+
+.headerEdit{
+  display: flex;
+  justify-content: space-between;
+  margin:1rem 
+}
+.editCont svg{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.fotoPerfil{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #765898 ;
+  margin-top: 1rem;
+}
+.fotoPerfilCont{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.form-control{
+  background-color:#fff ;
+  border-color:#272727;
+  color: #272727 !important;
+  
+}
+.entry {
+  border-top: 1px solid #e9eef5;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+.card{
+  background-color: transparent;
+  border: none;
+}
+
+.btnsEdit{
+  display: flex;
+  justify-content:right;
+ margin-top: 1rem;
+}
+.btnsEdit svg{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  width: 25px;
+  height: 25px;
+}
+.btnsEdit p{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+}
+.btnsEdit div{
+  display: flex;
+  
+}
+
+.error p{
+  color: tomato;
+  margin-top: 10px;
+}
+button{
+  display: flex;
+  background: transparent;
+  color: #272727;
+  border: none;
+}
+h3{
+  text-align: center;
+  color:#272727 ;
+}
+
+svg{
+  height: 20px;
+ width: 20px;
+}
+img{
+width: 25px;
+height: 25px;
+margin-top: 16px;
+}
+.titleSection{
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 990px) {
+
+.about {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+}
+@media screen and (max-width: 767px) {
+
+.about {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+}
+
+@media screen and (max-width: 575px) {
+
+.about {
+  margin-right: 0rem;
+  margin-left: 0rem;
+}
+
+
+}

@@ -1,0 +1,142 @@
+.about {
+  margin-top: 10px;
+  color:  #272727;
+  margin-left: 10rem;
+  margin-right: 10rem;
+    background: #fff;
+    border: 1px solid #dde0e5;
+    box-shadow: 0 2px 20px rgba(212,216,232,.52);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
+}
+.entry {
+  border-top: 1px solid #e9eef5;
+  padding: 1rem 0;
+}
+
+  .target{
+    background-color:transparent;
+    color: #272727;
+    
+  }
+  .studioEdit{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+svg{
+    height: 20px;
+   width: 20px;
+  }
+
+  .headerEdit{
+    display: flex;
+    justify-content: space-between;
+   margin:1rem ;
+  }
+  
+  .editCont svg{
+    margin-top: 20px;
+  }
+  .form-control{
+    background-color:#FFFFFF;
+    border-color: #272727 ;
+    color:#272727 !important;
+  }
+  small{
+    color: #979797;
+
+}
+  
+  .list-group-item{
+    border: none;
+  }
+  .list-group-item p{
+    color: #5e595e;
+  }
+  .delete{
+    
+    margin-top: 5px;
+    
+  }
+  .delete img{
+    
+    margin-top: 0px;
+    
+  }
+  
+  .expEdit{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .btnsEdit{
+    display: flex;
+    justify-content:right;
+   margin-top: 1rem;
+  }
+  .btnsEdit svg{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    width: 25px;
+    height: 25px;
+  }
+  .btnsEdit p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+  }
+  .btnsEdit div{
+    display: flex;}
+    
+.error p{
+  color: tomato;
+  margin-top: 10px;
+}
+button{
+  display: flex;
+  background: transparent;
+  color: #272727;
+  border: none;
+}
+img{
+  width: 25px;
+  height: 25px;
+  margin-top: 16px;
+}
+  .titleSection{
+    display: flex;
+    justify-content: center;
+  }
+
+   /* Responsive Styles */
+@media screen and (max-width: 990px) {
+    
+    .about {
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+  }
+  @media screen and (max-width: 767px) {
+   
+    .about {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+   
+  }
+  
+  @media screen and (max-width: 575px) {
+   
+    .about {
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+    
+    
+  }
