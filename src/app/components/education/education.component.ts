@@ -90,7 +90,6 @@ export class EducationComponent implements OnInit {
         };
     }
 
-
     loadEducation(): void {
         this.educationService.lista().subscribe(
             data => this.educations = data,

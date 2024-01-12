@@ -9,13 +9,14 @@ import { AboutComponent } from '../components/about/about.component';
 import { TokenService } from '../services/token.service';
 import { EducationComponent } from '../components/education/education.component';
 import { CertificationComponent } from '../components/certification/certification.component';
+import { ExperienceComponent } from '../components/experience/experience.component';
 
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     imports: [
-        CommonModule, RouterOutlet, FooterComponent, NavBarComponent, LoginComponent, BannerHomeComponent, AboutComponent, EducationComponent, CertificationComponent
+        CommonModule, RouterOutlet, FooterComponent, NavBarComponent, LoginComponent, BannerHomeComponent, AboutComponent, EducationComponent, CertificationComponent,ExperienceComponent
     ],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css',
