@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal} from '@angular/core';
-import { IsLoggedService } from '../../services/isLogged.service';
 import { Router, RouterLink } from '@angular/router';
 import { TokenService } from '../../services/token.service';
 import { MsgAlertService } from '../../services/msg-alert.service';
@@ -42,6 +41,14 @@ export class NavBarComponent {
   }
 
   constructor(private tokenService: TokenService, private router: Router,private myService: MsgAlertService,) { }
+
+  ngDoCheck() {
+    if (this.tokenService.getToken()) {
+      this.session.set(true)
+    } else {
+      this.session.set(false)
+    }
+}
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
