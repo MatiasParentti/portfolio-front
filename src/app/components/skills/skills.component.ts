@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, type OnInit } from '@angular/core';
+import { Component, Input, signal, type OnInit } from '@angular/core';
 import { Skill } from '../../model/skills';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TokenService } from '../../services/token.service';
 import { MsgAlertService } from '../../services/msg-alert.service';
 import { SkillService } from '../../services/skills.service';
 import { ToastService } from '../../services/toast.service';
+import { InputSytleService } from '../../services/inputSytle.service';
 
 @Component({
     selector: 'app-skills',
@@ -27,6 +28,7 @@ export class SkillsComponent implements OnInit {
     newSkill = false;
     editSkill = false;
     id: number = 0
+    public style = signal(this.inputStyle)
 
     get urlSvgControl() {
         return this.form.get("urlSvg");
@@ -44,7 +46,7 @@ export class SkillsComponent implements OnInit {
         return this.nameSkillsControl?.touched && !this.nameSkillsControl?.valid;
     }
 
-    constructor(private tokenService: TokenService, private msgService: MsgAlertService, private mySkill: SkillService, private formBuilder: FormBuilder, private toast: ToastService,) {
+    constructor(private msgService: MsgAlertService, private mySkill: SkillService, private formBuilder: FormBuilder, private toast: ToastService, private inputStyle: InputSytleService) {
 
         this.form = this.formBuilder.group({
 
@@ -123,7 +125,7 @@ export class SkillsComponent implements OnInit {
 
             action.subscribe(
                 () => {
-                    const message = isEdit ? 'Education actualizada' : 'Education creada';
+                    const message = isEdit ? 'Skill actualizada' : 'Skill creada';
                     this.toast.showSuccessToast(message)
                     this.loadSkills();
                 },
