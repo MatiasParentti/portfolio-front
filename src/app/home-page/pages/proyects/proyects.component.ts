@@ -5,12 +5,12 @@ import { NavBarComponent } from '../../../components/navBar/navBar.component';
 import { FooterComponent } from '../../../components/footer/footer.component';
 
 @Component({
-    selector: 'app-works',
+    selector: 'app-proyects',
     standalone: true,
     imports: [
-        CommonModule,RouterOutlet,NavBarComponent,FooterComponent
+        CommonModule, RouterOutlet, NavBarComponent, FooterComponent
     ],
-    templateUrl: './works.component.html',
-    styleUrl: './works.component.css',
+    templateUrl: './proyects.component.html',
+    styleUrl: './proyects.component.css',
 })
-export default class WorksComponent { }
+export default class ProyectsComponent { }

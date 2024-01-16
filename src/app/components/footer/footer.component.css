@@ -11,9 +11,11 @@ padding: 0.5rem;
   backdrop-filter: blur(10px);
   background: #765898;
   padding: 10px;
+  width: 100%;
+  height: 81px;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 0;
 }
 
 .footerLinksSocial{

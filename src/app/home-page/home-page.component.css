@@ -5,3 +5,8 @@
 p{
   color: blueviolet;
 }
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}

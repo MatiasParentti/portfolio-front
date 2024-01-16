@@ -2,16 +2,22 @@
 
 @if (session()) {
 
-<div class="container ">
-    <app-banner-home></app-banner-home>
-    <app-about [session]="session()" [isAdmin]="isAdmin()"></app-about>
-    <app-education [session]="session()" [isAdmin]="isAdmin()"></app-education>
-    <app-certification [session]="session()" [isAdmin]="isAdmin()"></app-certification>
-    <app-experience [session]="session()" [isAdmin]="isAdmin()"></app-experience>
-    <app-skills [session]="session()" [isAdmin]="isAdmin()"></app-skills>
-    <app-project [session]="session()" [isAdmin]="isAdmin()"></app-project>
-</div>
+<div class="wrapper">
 
+    <div class="container ">
+        <app-banner-home></app-banner-home>
+        <app-about [session]="session()" [isAdmin]="isAdmin()"></app-about>
+        <app-education [session]="session()" [isAdmin]="isAdmin()"></app-education>
+        <app-certification [session]="session()" [isAdmin]="isAdmin()"></app-certification>
+        <app-experience [session]="session()" [isAdmin]="isAdmin()"></app-experience>
+        <app-skills [session]="session()" [isAdmin]="isAdmin()"></app-skills>
+        <app-project [session]="session()" [isAdmin]="isAdmin()"></app-project>
+
+    </div>
+    <app-footer></app-footer>
+
+
+</div>
 
 
 }@else {

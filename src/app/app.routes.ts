@@ -14,9 +14,9 @@ export const routes: Routes = [
     },
     {
 
-        path: 'works',
+        path: 'proyects',
         title: 'Proyectos',
-        loadComponent: () => import('./home-page/pages/works/works.component'),
+        loadComponent: () => import('./home-page/pages/proyects/proyects.component'),
         canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] }
     },
     {
