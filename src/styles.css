@@ -6,6 +6,10 @@ html,body {
     height: 100%;
     background-color: #f7f8fc;
   }
+
+  html, body {
+    min-height: 100%;
+}
  
   h4{
     text-align: center;

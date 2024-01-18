@@ -11,3 +11,7 @@
     transition: all .3s ease-out;
   
   }
+
+  html, body {
+    min-height: 100%;
+}

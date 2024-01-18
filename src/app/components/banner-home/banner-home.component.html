@@ -1,30 +1,30 @@
 <div class="home">
-  
+
   @for (profile of profiles; track $index) {
 
 
-    <div class="row" >
-      <div class="homeData col">
-        <h1 class="homeTitle" >
-          Hi,<br />I'am <span class="homeTitleColor">{{profile.name}}</span><br />
-          Web Dev
-        </h1>
+  <div class="row">
+    <div class="homeData col">
+      <h1 class="homeTitle">
+        Hi,<br />I'am <span class="homeTitleColor">{{profile.name}}</span><br />
+        Web Dev
+      </h1>
 
-        <a href="#footer" class="button">Contacto</a>
-       
-        
-      </div>
-      <div class="col image">
-        <img class="homeImg" src="{{profile.lastname}}" />
-      </div>
+      <a href="#footer" class="button">Contacto</a>
+
+
     </div>
+    <div class="col image">
+      @defer (on timer (500)) {
+      <img class="homeImg" src="{{profile.lastname}}" />
+      }@placeholder {
+      Cargando...
+      }
+
+    </div>
+  </div>
 
 
   }
 
-  
-
-     
-
-    
-  </div>
+</div>

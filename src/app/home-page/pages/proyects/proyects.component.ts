@@ -10,12 +10,13 @@ import { ProyectService } from '../../../services/project.service';
 import { MsgAlertService } from '../../../services/msg-alert.service';
 import { TokenService } from '../../../services/token.service';
 import { BannerHomeComponent } from '../../../components/banner-home/banner-home.component';
+import { InputSytleService } from '../../../services/inputSytle.service';
 
 @Component({
     selector: 'app-proyects',
     standalone: true,
     imports: [
-        CommonModule,BannerHomeComponent, RouterLink,RouterOutlet, NavBarComponent, FooterComponent, FormsModule, ReactiveFormsModule
+        CommonModule, BannerHomeComponent, RouterLink, RouterOutlet, NavBarComponent, FooterComponent, FormsModule, ReactiveFormsModule
     ],
     templateUrl: './proyects.component.html',
     styleUrl: './proyects.component.css',
@@ -29,8 +30,9 @@ export default class ProyectsComponent {
     newProyect = false;
     editProyect = false;
     editId: number = 0;
-
-
+    public style = signal(this.inputStyle)
+    public session = signal(false)
+    isAdmin = signal(false)
 
     get nameControl() {
         return this.form.get("name");
@@ -81,7 +83,7 @@ export default class ProyectsComponent {
     }
 
 
-    constructor(private toast: ToastService, private router: Router, private myProyect: ProyectService, private msgService: MsgAlertService, private formBuilder: FormBuilder, private tokenService: TokenService) {
+    constructor(private inputStyle: InputSytleService, private toast: ToastService, private router: Router, private myProyect: ProyectService, private msgService: MsgAlertService, private formBuilder: FormBuilder, private tokenService: TokenService) {
 
         this.form = this.formBuilder.group({
 
@@ -102,9 +104,9 @@ export default class ProyectsComponent {
         this.loadProyects();
     }
 
-    cancel() {
+    cancel(): void {
         this.editProyect = false;
-        this.newProyect = false
+        this.newProyect = false;
         this.form.reset();
     }
 
@@ -137,6 +139,7 @@ export default class ProyectsComponent {
             this.myProyect.delete(id).subscribe(
                 () => {
                     this.toast.showSuccessToast('Proyecto eliminado')
+                    this.editProyect = false;
                     this.loadProyects();
                 },
                 err => {
@@ -176,11 +179,11 @@ export default class ProyectsComponent {
             const values = this.form.value;
             const proyect = new Proyect(
                 isEdit ? this.editId : this.Proyects.length + 1,
+                values.name,
+                values.liveCode,
+                values.source,
                 values.image,
                 values.info,
-                values.liveCode,
-                values.name,
-                values.source,
                 values.stack
             );
 
@@ -206,10 +209,6 @@ export default class ProyectsComponent {
             console.log('error');
         }
     }
-
-
-    public session = signal(false)
-    isAdmin = signal(false)
 
 
     private checkSession(): void {
