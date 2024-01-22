@@ -9,6 +9,7 @@
   padding: 2rem;
   border-radius: 4px;
   transition: background-color .4s ease-in-out, border-color .4s ease-in-out;
+margin-bottom: 5rem;
 }
 
 .card {
@@ -249,7 +250,3 @@ a {
 
 }
 
-.testt{
-
-  max-height: 100% auto;
-}

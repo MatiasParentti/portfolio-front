@@ -1,9 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
-
-
 <div class="wrapper">
-    <div class="container testt">
+    <div class="container">
 
         <app-banner-home></app-banner-home>
 
@@ -250,7 +248,7 @@
 
                             <p class="card-text mt-1"><small>{{proyect.stack}}</small></p>
                             <p class="btnDown">
-                                <a class="mt-1" data-bs-toggle="collapse" href='#this' role="button"
+                                <a class="mt-1" data-bs-toggle="collapse" href='#{{proyect.id}}' role="button"
                                     aria-expanded="false" aria-controls="collapseExample">
                                     <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%2352d053' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3ccircle cx='12' cy='12' r='9' /%3e%3cline x1='8' y1='12' x2='12' y2='16' /%3e%3cline x1='12' y1='8' x2='12' y2='16' /%3e%3cline x1='16' y1='12' x2='12' y2='16' /%3e%3c/svg%3e"
                                         alt="">
@@ -258,7 +256,7 @@
                                 descripcion
 
                             </p>
-                            <div class="collapse" id="this">
+                            <div class="collapse" id="{{proyect.id}}">
                                 <div class="card-body">
                                     {{proyect.info}}
                                 </div>
@@ -272,24 +270,7 @@
             }
 
 
-
-
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <a class="btnDown" routerLink="/home">
                 <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpolyline points='11 7 6 12 11 17' /%3e%3cpolyline points='17 7 12 12 17 17' /%3e%3c/svg%3e"
@@ -298,13 +279,9 @@
 
 
 
-
         </div>
-
+        <div class="entry"></div>
+        <app-footer></app-footer>
     </div>
-
-
-
-    <app-footer ></app-footer>
 
 </div>
