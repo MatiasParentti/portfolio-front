@@ -102,7 +102,7 @@
     cursor: pointer;
     user-select: none;
     overflow: hidden;
-    color: #52d053 ;
+    color: #a877c8 ;
     z-index: 1;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -116,7 +116,7 @@
     height: 100%;
     background: transparent;
     z-index: -1;
-    border: 1px solid #52d053 ;
+    border: 1px solid #a2da5a;
    }
    .btnSpan::before {
     content: "";
@@ -137,7 +137,7 @@
    .btnWork:hover .btnSpan::before {
     transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
-    background: #52d053 ;
+    background: #a2da5a ;
     
    }
    .btnWork :hover {
@@ -153,7 +153,7 @@
   
    
    .btnWork:active .btnSpan::before {
-    background: #52d053 ;
+    background: #a2da5a ;
     
    }
    ul li{
@@ -185,7 +185,7 @@
   .headerEdit{
     display: flex;
     justify-content: space-between;
-    margin:1rem ;
+    
   }
     .editCont svg{
    
@@ -194,7 +194,7 @@
 
     .button {
       display: inline-block;
-      background-color: #52d053;
+      background-color: #a2da5a;
       color: #272727 !important;
       padding: 0.5rem 1.5rem;
       font-weight: 500;

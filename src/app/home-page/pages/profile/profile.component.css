@@ -1,10 +1,160 @@
-:host {
-  display: block;
+
+
+
+
+.headerEdit{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.editCont svg{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 15px;
 }
 
-.bg{
-
- background-color: blueviolet;
-height: 700px;
+ .fotoPerfil{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #a877c8 ;
+  margin-top: 1rem;
+}
+.fotoPerfilCont{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.error p{
+  color:#d3290f;
+  margin-top: 10px;
+}
+svg{
+  height: 25px;
+ width: 25px;
+}
+.btnEdit{
+  justify-content: space-between;
+  display: flex;
+}
+.list-group-item{
+  padding: 15px;
+  display: flex;
+ 
+}
+.mr-5{
+  margin-right: 10px;
 
 }
+.form-control {
+  background-color: #FFFFFF;
+  ;
+  color: #272727 !important;
+  border: 1px solid #e9eef5;
+}
+
+.about {
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+    background-color: #fff;
+    border: 1px solid #dde0e5;
+    padding: 2rem;
+    transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
+   color:  #272727;
+   margin-bottom: 5rem;
+  }
+
+
+
+
+
+.entry {
+    border-top: 1px solid #e9eef5;
+    padding: 1rem 0;
+    margin-top:  1rem ;
+}
+
+.btnsEdit{
+  display: flex;
+  justify-content:right;
+  margin-top:  1rem ;
+}
+.btnsEdit img{
+  
+  margin-top:  1rem ;
+}
+.btnsEdit svg{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  width: 25px;
+  height: 25px;
+}
+.btnsEdit p{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+}
+.btnsEdit div{
+  display: flex;
+  
+}
+.button{
+  display: flex;
+  background: transparent;
+  color: #272727;
+  border: none;
+}
+.headerEdit img{
+  width: 25px;
+  height: 25px;
+  margin-top: 16px;
+}
+  .titleSection{
+    display: flex;
+    justify-content: center;
+  }
+img{
+  width: 25px;
+  height: 25px;
+  
+}
+       /* Responsive Styles */
+       @media screen and (max-width: 990px) {
+    
+        .about {
+          margin-right: 2rem;
+          margin-left: 2rem;
+        }
+      }
+      @media screen and (max-width: 767px) {
+       
+        .about {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
+       
+      }
+      
+      @media screen and (max-width: 575px) {
+       
+        .about {
+          margin-right: 0rem;
+          margin-left: 0rem;
+        }
+        
+        
+      }
+
+      .wrapper {
+        min-height: 100%;
+        position: relative;
+      
+      }
+      

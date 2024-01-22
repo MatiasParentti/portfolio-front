@@ -1,14 +1,279 @@
-
 <app-nav-bar></app-nav-bar>
-<div class="container bg">
- 
+
+<div class="wrapper">
+    <div class="container">
+
+        <app-banner-home></app-banner-home>
+        <div class="about">
+
+            <div class="headerEdit">
 
 
-    
-    <h1>Perfil</h1>
+                <div class="titleSection">
+                    <h4>Perfil</h4><img
+                        src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3ccircle cx='12' cy='7' r='4' /%3e%3cpath d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' /%3e%3c/svg%3e"
+                        alt="">
+                </div>
+
+
+            </div>
+            <div class="entry"></div>
+
+            @if (editProfile) {
+
+            <div class="row">
+                <div class="col-1 col-md-2 col-lg-3"></div>
+                <div class="col-12 col-md-8 col-lg-6" id="newAbouText">
+
+                    <div class="card-body">
+                        <form [formGroup]="form" (ngSubmit)="onEdit($event)">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input [ngStyle]="style().getInputStyle(nameControl)" type="text" class="form-control"
+                                    id="name" aria-describedby="nameHelp" formControlName="name">
+                                @if (nameControl?.errors && nameControl?.touched) {
+                                <div class="error">
+                                    @if (nameControl?.hasError('required')) {
+                                    <p class="error mt-1">
+                                        Nombre es requerido.
+                                    </p>
+                                    }@else if (nameControl?.errors?.['minlength']) {
+                                    <p class="error mt-1">
+                                        El nombre debe ser de 5 o más caracteres.
+                                    </p>
+                                    }@else if (nameControl?.errors?.['maxlength']) {
+                                    <p class="error mt-1">
+                                        El nombre debe ser menor a 12 caracteres.
+                                    </p>
+                                    }
+
+                                </div>
+                                }
+
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-label">Imagen banner</label>
+                                <input [ngStyle]="style().getInputStyle(lastNameControl)" type="text"
+                                    class="form-control" id="lastname" aria-describedby="lastnameHelp"
+                                    formControlName="lastname">
+                                @if (lastNameControl?.errors && lastNameControl?.touched) {
+
+                                <div class="error">
+                                    @if (lastNameControl?.hasError('required')) {
+                                    <p class="error mt-1">
+                                        Imagen banner es requerido.
+                                    </p>
+                                    }@else if (lastNameControl?.errors?.['minlength']) {
+                                    <p class="error mt-1">
+                                        Imagen banner debe ser de 5 o más caracteres.
+                                    </p>
+                                    }@else if (lastNameControl?.errors?.['maxlength']) {
+                                    <p class="error mt-1">
+                                        Imagen banner debe ser menor a 12 caracteres.
+                                    </p>
+                                    }
+
+                                </div>
+
+                                }
+
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="about" class="form-label">Sobre mi</label>
+                                <input [ngStyle]="style().getInputStyle(aboutControl)" type="text" class="form-control"
+                                    id="about" aria-describedby="aboutHelp" formControlName="about">
+                                @if (aboutControl?.errors && aboutControl?.touched) {
+                                <div class="error">
+                                    @if (aboutControl?.hasError('required')) {
+                                    <p class="error mt-1">
+                                        Sobre mi es requerido.
+                                    </p>
+                                    }@else if (aboutControl?.errors?.['minlength']) {
+                                    <p class="error mt-1">
+                                        Sobre mi debe ser de 5 o más caracteres.
+                                    </p>
+                                    }@else if (aboutControl?.errors?.['maxlength']) {
+                                    <p class="error mt-1">
+                                        Sobre mi debe ser menor a 12 caracteres.
+                                    </p>
+                                    }
+
+
+                                </div>
+                                }
+
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="imageUrl" class="form-label">Foto Perfil</label>
+                                <input [ngStyle]="style().getInputStyle(imageUrlControl)" type="text"
+                                    class="form-control" id="imageUrl" aria-describedby="imageUrlHelp"
+                                    formControlName="imageUrl">
+                                <div class="error" *ngIf="imageUrlControl?.errors  && imageUrlControl?.touched">
+                                    <p *ngIf="imageUrlControl?.hasError('required')" class="error mt-1">
+                                        ImageUrl es requerido.
+                                    </p>
+                                    <p *ngIf="imageUrlControl?.errors?.['minlength']" class="error mt-1">
+                                        ImageUrl debe ser de 5 o más caracteres.
+                                    </p>
+                                    <p *ngIf="imageUrlControl?.errors?.['maxlength']" class="error mt-1">
+                                        ImageUrl debe ser menor a 12 caracteres.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input [ngStyle]="style().getInputStyle(emailControl)" type="email" class="form-control"
+                                    id="email" aria-describedby="emailHelp" formControlName="email">
+                                <div class="error" *ngIf="emailControl?.errors  && emailControl?.touched">
+                                    <p *ngIf="emailControl?.hasError('required')" class="error mt-1">
+                                        Email es requerido.
+                                    </p>
+                                    <p *ngIf="emailControl?.errors?.['minlength']" class="error mt-1">
+                                        El Email debe ser de 5 o más caracteres.
+                                    </p>
+                                    <p *ngIf="emailControl?.errors?.['maxlength']" class="error mt-1">
+                                        El Email debe ser menor a 12 caracteres.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="github" class="form-label">Github</label>
+                                <input [ngStyle]="style().getInputStyle(githubControl)" type="text" class="form-control"
+                                    id="github" aria-describedby="githubHelp" formControlName="github">
+                                <div class="error" *ngIf="githubControl?.errors  && githubControl?.touched">
+                                    <p *ngIf="githubControl?.hasError('required')" class="error mt-1">
+                                        Github es requerido.
+                                    </p>
+                                    <p *ngIf="githubControl?.errors?.['minlength']" class="error mt-1">
+                                        Github debe ser de 5 o más caracteres.
+                                    </p>
+                                    <p *ngIf="githubControl?.errors?.['maxlength']" class="error mt-1">
+                                        Github debe ser menor a 12 caracteres.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="linkedin" class="form-label">Linkedin</label>
+                                <input [ngStyle]="style().getInputStyle(linkedinControl)" type="text"
+                                    class="form-control" id="linkedin" formControlName="linkedin">
+                                <div class="error" *ngIf="linkedinControl?.errors  && linkedinControl?.touched">
+                                    <p *ngIf="linkedinControl?.hasError('required')" class="error mt-1">
+                                        Linkedin es requerido.
+                                    </p>
+                                    <p *ngIf="linkedinControl?.errors?.['minlength']" class="error mt-1">
+                                        Linkedin debe ser de 5 o más caracteres.
+                                    </p>
+                                    <p *ngIf="linkedinControl?.errors?.['maxlength']" class="error mt-1">
+                                        Linkedin debe ser menor a 12 caracteres.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="btnsEdit">
+                                <button class="button">
+                                    <div (click)="cancel()">
+                                        <p>Cancelar</p>
+                                        <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3ccircle cx='12' cy='12' r='9' /%3e%3cpath d='M10 10l4 4m0 -4l-4 4' /%3e%3c/svg%3e"
+                                            alt="">
+                                    </div>
+                                </button>
+                                <button class="button" type="submit">
+                                    <div>
+                                        <p>Guardar</p>
+                                        <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3ccircle cx='12' cy='12' r='9' /%3e%3cpath d='M9 12l2 2l4 -4' /%3e%3c/svg%3e"
+                                            alt="">
+                                    </div>
+                                </button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-1 col-md-2 col-lg-3"></div>
+            </div>
+
+            }@else {
+
+            @for (profile of Profile; track $index) {
+
+            <div class="row">
+                <div class="col-1 col-md-2 col-lg-3"></div>
+
+                <div class="col-12 col-md-8 col-lg-6">
+                    @if (isAdmin()) {
+                    <div class="editCont" (click)="edits(profile.id)">
+                        <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3' /%3e%3cpath d='M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3' /%3e%3cline x1='16' y1='5' x2='19' y2='8' /%3e%3c/svg%3e"
+                            alt="">
+                    </div>
+                    }
+                    <div class="fotoPerfilCont">
+                        <img class="fotoPerfil" src="{{profile.imageUrl}}" alt="">
+                    </div>
+
+
+                    <ul class="list-group list-group-flush mt-5">
+                        <li class="list-group-item">
+                            <div class="mr-5">
+                                <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z' /%3e%3cpath d='M16 7h4' /%3e%3cpath d='M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3' /%3e%3c/svg%3e"
+                                    alt="wewe">
+                            </div>
+                            <p>{{profile.name}}</p>
+                        </li>
+                      
+                       
+                        <li class="list-group-item">
+                            <p class="mr-5">
+                                <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M10 19h-6a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1h6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2h6a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-6a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2z' /%3e%3cpath d='M12 5v16' /%3e%3cpath d='M7 7h1' /%3e%3cpath d='M7 11h1' /%3e%3cpath d='M16 7h1' /%3e%3cpath d='M16 11h1' /%3e%3cpath d='M16 15h1' /%3e%3c/svg%3e"
+                                    alt="wewe">
+
+                            </p>
+                            <p>{{profile.about}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="mr-5"> <img
+                                    src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3crect x='3' y='5' width='18' height='14' rx='2' /%3e%3cpolyline points='3 7 12 13 21 7' /%3e%3c/svg%3e"
+                                    alt="wewe"></p>
+                            <p>{{profile.email}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="mr-5">
+                                <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5' /%3e%3c/svg%3e"
+                                    alt="wewe">
+                            </p>
+                            <p>{{profile.github}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="mr-5"> <img
+                                    src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3crect x='4' y='4' width='16' height='16' rx='2' /%3e%3cline x1='8' y1='11' x2='8' y2='16' /%3e%3cline x1='8' y1='8' x2='8' y2='8.01' /%3e%3cline x1='12' y1='16' x2='12' y2='11' /%3e%3cpath d='M16 16v-3a2 2 0 0 0 -4 0' /%3e%3c/svg%3e"
+                                    alt="wewe"></p>
+                            <p>{{profile.linkedin}}</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-1 col-md-2 col-lg-3"></div>
+            </div>
 
 
 
+            }
+
+
+            }
+
+
+        </div>
+
+        <div class="entry"></div>
+        <app-footer></app-footer>
+    </div>
 
 </div>
-<app-footer></app-footer>

@@ -13,7 +13,7 @@
 
 .button {
   display: inline-block;
-  background-color: #52d053;
+  background-color: #a2da5a;
   color: #fff !important;
   padding: 0.5rem 1.5rem;
   font-weight: 500;
@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 .homeTitleColor {
-  color: #e6770b;
+  color: #f7bb2a;
 }
 .homeTitle {
   font-size: 1.5rem;

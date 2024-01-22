@@ -210,7 +210,6 @@ export default class ProyectsComponent {
         }
     }
 
-
     private checkSession(): void {
         const hasToken = !!this.tokenService.getToken();
 

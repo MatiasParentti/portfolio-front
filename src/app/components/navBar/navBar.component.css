@@ -34,7 +34,7 @@ padding: 0.5rem;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 6;
-  background: #765898;
+  background: #a877c8;
   top: 0;
   right: 0;
   left: 0;
@@ -82,12 +82,12 @@ place-content: center;
 a,
 a:visited,
 a:hover {
-color: gainsboro;
+color:gainsboro;
 text-decoration: none;
 }
 
 a:hover {
-color: gainsboro;
+color:gainsboro;
 }
 
 #menu-btn{
@@ -126,7 +126,7 @@ justify-content: space-between;
   top:115%; right: 2rem;
   -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
-background:#765898;
+background:#a877c8;
   box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
   border:.1rem solid rgba(0,0,0,.1);
   border-radius: 4px;

@@ -26,7 +26,7 @@
 .headerEdit{
   display: flex;
   justify-content: space-between;
-  margin:1rem 
+  
 }
 .editCont svg{
   justify-content: center;
@@ -39,7 +39,7 @@
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 5px solid #765898 ;
+  border: 5px solid #a877c8 ;
   margin-top: 1rem;
 }
 .fotoPerfilCont{
