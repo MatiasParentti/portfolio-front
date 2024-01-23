@@ -15,14 +15,14 @@ export const routes: Routes = [
     {
 
         path: 'proyects',
-        title: 'Proyectos',
+        title: 'Matias Parentti | Proyectos',
         loadComponent: () => import('./home-page/pages/proyects/proyects.component'),
         canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] }
     },
     {
 
         path: 'profile',
-        title: 'Perfil',
+        title: 'Matias Parentti | Perfil',
         loadComponent: () => import('./home-page/pages/profile/profile.component'),
         canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] }
     },

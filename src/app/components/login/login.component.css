@@ -7,6 +7,16 @@
   margin: 0;
 }
 
+.bol{
+
+color: #f7bb2a;
+text-decoration:dashed;
+
+}
+.entry{
+ 
+  height: 10px;
+}
 .main{
   font-family: 'Space Grotesk', sans-serif;
   font-size:  .938rem;
@@ -75,10 +85,12 @@ a {
 }
 
 
+
 @media screen and (max-width: 320px) {
   .home {
     padding-top: 7rem;
   }
+ 
 }
 
 @media screen and (min-width: 1024px) {
