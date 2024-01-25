@@ -11,7 +11,7 @@
                     <label for="user" class="form-label">user</label>
                     <input
                         [ngStyle]="{'border-color':(User?.errors && User?.touched) ? 'tomato' : '#736b5e', 'color':(User?.errors && User?.touched) ? 'tomato' : 'whitesmoke' }"
-                        type="text" class="form-control" id="user" formControlName="user" autocomplete="username" />
+                        type="text" placeholder="MatiasMP"  class="form-control" id="user" formControlName="user" autocomplete="username" />
                     <div *ngIf="User?.errors  && User?.touched">
                         <p *ngIf="User?.hasError('required')" class="error mt-1">
                             El User es requerido.
@@ -30,7 +30,7 @@
                     <input
                         [ngStyle]="{'border-color':(Password?.errors && Password?.touched) ? 'tomato' : '#736b5e','color':(Password?.errors && Password?.touched) ? 'tomato' : 'whitesmoke'}"
                         type="password" class="form-control" id="password" formControlName="password"
-                        autocomplete="current-password" />
+                        autocomplete="current-password"  placeholder="welcome"/>
                     <div *ngIf="Password?.errors  && Password?.touched">
                         <p *ngIf="Password?.hasError('required')" class="error mt-1">
                             El password es requerido.

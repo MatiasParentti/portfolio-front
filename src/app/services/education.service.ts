@@ -11,7 +11,7 @@ import { Education } from '../model/education';
 
 export class EducationService {
 
-    expURL = 'http://localhost:8080/education/'
+    expURL = 'https://backendargprogh.onrender.com/education/'
 
 
     constructor(private httpClient: HttpClient) {

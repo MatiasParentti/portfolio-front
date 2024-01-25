@@ -12,7 +12,7 @@ import { Profile } from '../model/profile';
 
 export class ProfileService {
 
-  expURL = 'http://localhost:8080/profile/'
+  expURL = 'https://backendargprogh.onrender.com/profile/'
 
 
   constructor(private httpClient: HttpClient) {

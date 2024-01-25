@@ -7,19 +7,17 @@
     <div class="homeData col">
       <h1 class="homeTitle">
         Hi,<br />I'am <span class="homeTitleColor">{{profile.name}}</span><br />
-        Web Dev
+        Developer
       </h1>
 
-      <a href="#footer" class="button">CV (↓) </a>
+      <a href={{profile.lastname}} target="_blank" class="button">CV (↓) </a>
 
 
     </div>
     <div class="col image">
-      @defer (on timer (500)) {
-      <img class="homeImg" src="{{profile.lastname}}" />
-      }@placeholder {
-      Cargando...
-      }
+     
+      <img class="homeImg" src="https://i.ibb.co/8r1TGcb/perfilM.png" />
+     
 
     </div>
   </div>

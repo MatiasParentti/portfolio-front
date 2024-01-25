@@ -12,7 +12,7 @@ import { Skill } from '../model/skills';
 export class SkillService {
 
 
-    expURL = 'http://localhost:8080/skill/'
+    expURL = 'https://backendargprogh.onrender.com/skill/'
 
     constructor(private httpClient: HttpClient) {
 

@@ -11,7 +11,7 @@ import { Experience } from '../model/experience';
 
 export class ExperienceService {
 
-  expURL = 'http://localhost:8080/experience/'
+  expURL = 'https://backendargprogh.onrender.com/experience/'
 
 
   constructor(private httpClient: HttpClient) {

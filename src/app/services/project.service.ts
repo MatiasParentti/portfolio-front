@@ -11,7 +11,7 @@ import { Proyect } from '../model/project';
 
 export class ProyectService {
 
-    expURL = 'http://localhost:8080/work/'
+    expURL = 'https://backendargprogh.onrender.com/work/'
 
 
     constructor(private httpClient: HttpClient) {

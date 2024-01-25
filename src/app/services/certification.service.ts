@@ -11,7 +11,7 @@ import { Certification } from '../model/certification';
 
 export class CertificationService {
 
-    expURL = 'http://localhost:8080/certification/'
+    expURL = 'https://backendargprogh.onrender.com/certification/'
 
 
     constructor(private httpClient: HttpClient) {
