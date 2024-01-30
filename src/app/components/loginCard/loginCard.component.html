@@ -8,40 +8,63 @@
             <form [formGroup]="form" (ngSubmit)="onSession($event)">
 
                 <div class="mb-3">
-                    <label for="user" class="form-label">user</label>
-                    <input
-                        [ngStyle]="{'border-color':(User?.errors && User?.touched) ? 'tomato' : '#736b5e', 'color':(User?.errors && User?.touched) ? 'tomato' : 'whitesmoke' }"
-                        type="text" placeholder="MatiasMP"  class="form-control" id="user" formControlName="user" autocomplete="username" />
-                    <div *ngIf="User?.errors  && User?.touched">
-                        <p *ngIf="User?.hasError('required')" class="error mt-1">
-                            El User es requerido.
-                        </p>
-                        <p *ngIf="User?.errors?.['minlength']" class="error mt-1">
-                            El User debe ser de 5 o más caracteres.
-                        </p>
-                        <p *ngIf="User?.errors?.['maxlength']" class="error mt-1">
-                            El User debe ser menor a 12 caracteres.
-                        </p>
+
+                    <div class="input-container">
+                        <input placeholder="Usuario" class="input-field" [ngStyle]="style().getInputStyle(usuarioControl)"
+                            type="text" id="user" formControlName="user" autocomplete="username">
+                        <label for="input-field" class="input-label">MatiasMP</label>
+                        <span class="input-highlight"></span>
                     </div>
+                    @if (usuarioControl?.errors && usuarioControl?.touched) {
+                    @if (usuarioControl?.hasError('required')) {
+                    <p class="error ">
+                        Usuario es requerido.
+                    </p>
+                    }@else if (usuarioControl?.errors?.['minlength']) {
+                    <p class="error">
+                        El Usuario debe ser de 5 o más caracteres.
+                    </p>
+                    }@else if (usuarioControl?.errors?.['maxlength']) {
+                    <p class="error">
+                        El Usuario debe ser menor a 12 caracteres.
+                    </p>
+                    }
+
+
+
+                    }
+
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">password</label>
-                    <input
-                        [ngStyle]="{'border-color':(Password?.errors && Password?.touched) ? 'tomato' : '#736b5e','color':(Password?.errors && Password?.touched) ? 'tomato' : 'whitesmoke'}"
-                        type="password" class="form-control" id="password" formControlName="password"
-                        autocomplete="current-password"  placeholder="welcome"/>
-                    <div *ngIf="Password?.errors  && Password?.touched">
-                        <p *ngIf="Password?.hasError('required')" class="error mt-1">
-                            El password es requerido.
-                        </p>
-                        <p *ngIf="Password?.errors?.['minlength']" class="error mt-1">
-                            El password debe ser de 8 o más caracteres.
-                        </p>
+                    <div class="input-container">
+                        <input placeholder="Contraseña" class="input-field" [ngStyle]="style().getInputStyle(passwordControl)"
+                            type="password" id="password" formControlName="password" autocomplete="current-password">
+                        <label for="input-field" class="input-label">welcome</label>
+                        <span class="input-highlight"></span>
                     </div>
+
+
+                    @if (passwordControl?.errors && passwordControl?.touched) {
+                    @if (passwordControl?.hasError('required')) {
+                    <p class="error">
+                        Contraseña es requerida.
+                    </p>
+                    }@else if (passwordControl?.errors?.['minlength']) {
+                    <p class="error">
+                        La Contraseña debe ser de 8 o más caracteres.
+                    </p>
+
+                    }
+                    }
+
                 </div>
-                <button type="submit" class="buttonLogin" [disabled]="Password?.errors"
-                    [disabled]="User?.errors">Init</button>
+
+                <div class="mb-3 ">
+                    <button type="submit" class="buttonLogin" [disabled]="passwordControl?.errors"
+                        [disabled]="usuarioControl?.errors">Init</button>
+                </div>
+
             </form>
         </div>
 

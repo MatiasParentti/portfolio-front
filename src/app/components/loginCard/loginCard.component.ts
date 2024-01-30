@@ -6,6 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../services/token.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { InputSytleService } from '../../services/inputSytle.service';
 
 
 @Component({
@@ -28,22 +29,23 @@ export class LoginCardComponent implements OnInit {
   password!: string;
   roles: string[] = [];
   errMsj: string = 'usuario o contraseña incorrecta';
+  public style = signal(this.inputStyle)
 
   
-  get Password() {
+  get passwordControl() {
     return this.form.get("password");
   }
 
-  get User() {
+  get usuarioControl() {
     return this.form.get("user");
   }
 
-  get PasswordValid() {
-    return this.Password?.touched && !this.Password?.valid;
+  get passwordValid() {
+    return this.passwordControl?.touched && !this.passwordControl?.valid;
   }
 
-  get UserValid() {
-    return this.User?.touched && !this.User?.valid;
+  get userValid() {
+    return this.usuarioControl?.touched && !this.usuarioControl?.valid;
   }
 
   constructor(
@@ -51,7 +53,7 @@ export class LoginCardComponent implements OnInit {
     private tokenService: TokenService,
     private authService: AuthService,
     private toastr: ToastrService,
-    private router: Router
+    private inputStyle: InputSytleService
   ) {
 
     this.form = this.formBuilder.group({

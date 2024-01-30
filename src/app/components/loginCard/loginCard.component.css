@@ -12,13 +12,11 @@ justify-self: center;
 }
 .error{
   color: tomato;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.form-control{
-  background-color:#fff;
-  border-color: #736b5e;
-  color:  #272727 !important;
-}
+
 .entry {
   border-top: 1px solid #e9eef5;
   padding: 1rem 0;
@@ -33,4 +31,62 @@ justify-self: center;
   border-radius: 0.2rem;
   text-decoration: none;
   border: none;
+  margin-left: 1rem;
+}
+
+
+/* Input container */
+.input-container {
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Input field */
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+  color:  #272727 !important;
+  
+}
+
+/* Input label */
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #a2da5a;
+  transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus + .input-label {
+  top: -20px;
+  font-size: 12px;
+  color: #a2da5a;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 100%;
 }
