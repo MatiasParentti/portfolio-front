@@ -3,12 +3,13 @@ import { Component, Input, type OnInit } from '@angular/core';
 import { ProyectService } from '../../services/project.service';
 import { Proyect } from '../../model/project';
 import { RouterLink } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
     selector: 'app-project',
     standalone: true,
     imports: [
-        CommonModule,RouterLink
+        CommonModule,RouterLink, NgOptimizedImage 
     ],
     templateUrl: './project.component.html',
     styleUrl: './project.component.css',

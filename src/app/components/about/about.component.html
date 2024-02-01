@@ -20,7 +20,7 @@
   <div class="entry"></div>
   <div class="row myAbout">
     <div class="col-12 col-lg-4 fotoPerfilCont mt-1">
-      <img class="fotoPerfil" src="{{profile.imageUrl}}" alt="perfil" />
+      <img class="fotoPerfil" [ngSrc]="profile.imageUrl" alt="perfil" fill priority/>
     </div>
     <div class="col-12 col-lg-8 mt-1">
       <h3 class="aboutSubtitle">Hola<span>👋</span> soy {{profile.name}}</h3>

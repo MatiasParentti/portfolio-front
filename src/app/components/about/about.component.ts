@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Profile } from '../../model/profile';
 import { ProfileService } from '../../services/profile.service';
-import { ToastService } from '../../services/toast.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     imports: [
-        CommonModule,
+        CommonModule,NgOptimizedImage
     ],
     templateUrl: './about.component.html',
     styleUrl: './about.component.css',

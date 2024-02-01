@@ -214,8 +214,12 @@
             <div class="card mb-3">
 
                 <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{proyect.image}}" class="img-fluid rounded-start" alt="...">
+                    <div class="col-md-4" >
+                       
+                            <img [ngSrc]="proyect.image" class="img-fluid rounded-start img-position" alt="..." fill priority>
+                       
+                           
+                        
                         <div class="buttonsWork">
 
                             <button class="btnWork">

@@ -13,7 +13,7 @@ import { SpinnerService } from '../../services/spinner.service';
    
 })
 export class SpinnerComponent {
-    isLoading$ = this.spinServ.isLoading$;
+    isLoading$ = signal(true);
 
     constructor(private spinServ: SpinnerService) {
 

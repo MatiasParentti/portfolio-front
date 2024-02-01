@@ -12,6 +12,12 @@
 margin-bottom: 5rem;
 }
 
+
+.img-position{
+  position: relative !important;
+  height: max-content !important;
+}
+
 .card {
   font-size: medium;
   margin-top: 5px;

@@ -11,12 +11,12 @@ import { MsgAlertService } from '../../../services/msg-alert.service';
 import { TokenService } from '../../../services/token.service';
 import { BannerHomeComponent } from '../../../components/banner-home/banner-home.component';
 import { InputSytleService } from '../../../services/inputSytle.service';
-
+import { NgOptimizedImage } from '@angular/common';
 @Component({
     selector: 'app-proyects',
     standalone: true,
     imports: [
-        CommonModule, BannerHomeComponent, RouterLink, RouterOutlet, NavBarComponent, FooterComponent, FormsModule, ReactiveFormsModule
+        CommonModule,NgOptimizedImage, BannerHomeComponent, RouterLink, RouterOutlet, NavBarComponent, FooterComponent, FormsModule, ReactiveFormsModule
     ],
     templateUrl: './proyects.component.html',
     styleUrl: './proyects.component.css',

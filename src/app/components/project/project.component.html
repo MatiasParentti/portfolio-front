@@ -28,16 +28,18 @@
             <div class="col">
                 <div class="card">
                     <div class="cardImg">
+                       
+                            <img [ngSrc]="proyect.image" class="card-img-top img-position" alt="..." fill priority/>
 
-                        <img src="{{ proyect.image }}" class="card-img-top" alt="..." />
+                      
 
-
-
-
-                        <div class="content">
-                            <h3>{{ proyect.name }}</h3>
-                            <p>{{ proyect.stack }}</p>
-                        </div>
+                            <div class="content">
+                                <h3>{{ proyect.name }}</h3>
+                                <p>{{ proyect.stack }}</p>
+                            </div>
+                      
+                        
+                       
                     </div>
 
 
