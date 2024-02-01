@@ -4,11 +4,13 @@ import { Profile } from '../../model/profile';
 import { ProfileService } from '../../services/profile.service';
 
 
+
+
 @Component({
     selector: 'app-banner-home',
     standalone: true,
     imports: [
-        CommonModule,
+        CommonModule
     ],
     templateUrl: './banner-home.component.html',
     styleUrl: './banner-home.component.css',

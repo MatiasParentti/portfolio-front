@@ -8,11 +8,9 @@ export class MsgAlertService {
   constructor() { 
 
 
-
   }
 
   
-
   msjAlert(mensaje: string) {
     const result = window.confirm(mensaje)
 

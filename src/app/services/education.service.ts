@@ -1,44 +1,44 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Education } from '../model/education';
+import { environment } from '../environment';
 
 
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 export class EducationService {
 
-    expURL = 'https://backendargprogh.onrender.com/education/'
 
+  expURL = environment.apiUrl;
 
-    constructor(private httpClient: HttpClient) {
+  private fullURL = `${this.expURL}/education/`;
 
+  constructor(private httpClient: HttpClient) {
+  }
 
+  public lista(): Observable<Education[]> {
+    return this.httpClient.get<Education[]>(this.fullURL + 'lista');
+  }
 
-    }
+  public detail(id: number): Observable<Education> {
+    return this.httpClient.get<Education>(this.fullURL + `detail/${id}`);
+  }
 
-    public lista(): Observable<Education[]> {
-        return this.httpClient.get<Education[]>(this.expURL + 'lista');
-      }
-    
-      public detail(id: number): Observable<Education> {
-        return this.httpClient.get<Education>(this.expURL + `detail/${id}`);
-      }
-    
-      public save(education: Education): Observable<any> {
-        return this.httpClient.post<any>(this.expURL + 'create', education);
-      }
-    
-      public update(id: number, education: Education): Observable<any> {
-        return this.httpClient.put<any>(this.expURL + `update/${id}`, education);
-      }
-    
-      public delete(id: number): Observable<any> {
-        return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
-      }
+  public save(education: Education): Observable<any> {
+    return this.httpClient.post<any>(this.fullURL + 'create', education);
+  }
+
+  public update(id: number, education: Education): Observable<any> {
+    return this.httpClient.put<any>(this.fullURL + `update/${id}`, education);
+  }
+
+  public delete(id: number): Observable<any> {
+    return this.httpClient.delete<any>(this.fullURL+ `delete/${id}`);
+  }
 
 
 }

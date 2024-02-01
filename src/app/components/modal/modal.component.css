@@ -1,0 +1,37 @@
+.log {
+  padding: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  right: 0;
+  justify-content: right;
+
+}
+
+img {
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+}
+
+a,
+a:visited,
+a:hover {
+  color: gainsboro;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gainsboro;
+}
+
+.myButton{
+  display: inline-block;
+  background-color: #a2da5a;
+  color: #fff !important;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  border: none;
+  margin-left: 1rem;
+}

@@ -1,26 +1,43 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { NuevoUsuario } from '../model/nuevo-usuario';
 import { LoginUsuario } from '../model/login-usuario';
 import { JwtDTO } from '../model/jwt-dto';
-
+import { environment } from '../environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
 
-    authURL = 'https://backendargprogh.onrender.com/auth/';
+    expURL = environment.apiUrl;
 
+    private authURL = `${this.expURL}/auth/`;
+
+    
     constructor(private httpClient: HttpClient) { }
 
-    public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
-        return this.httpClient.post<any>(this.authURL + 'nuevo', nuevoUsuario);
+    public nuevo(nuevoUsuario: NuevoUsuario): Observable<void> {
+        return this.httpClient.post<void>(this.authURL + 'nuevo', nuevoUsuario)
+            .pipe(
+                catchError((error) => {
+                    // Handle error here
+                    throw error;
+                })
+            );
     }
 
+
     public login(loginUsuario: LoginUsuario): Observable<JwtDTO> {
-        return this.httpClient.post<JwtDTO>(this.authURL + 'login', loginUsuario);
+        return this.httpClient.post<JwtDTO>(this.authURL + 'login', loginUsuario)
+            .pipe(
+                catchError((error) => {
+                    // Handle error here
+                    throw error;
+                })
+            );
+
     }
 }

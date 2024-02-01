@@ -1,0 +1,14 @@
+<a (click)="openModal(template)" class="log"> <img
+    src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%23e6770b' fill='none' stroke-linecap='round' stroke-width='1.5' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2' /%3e%3cpath d='M7 12h14l-3 -3m0 6l3 -3' /%3e%3c/svg%3e"
+    alt="">
+</a>
+
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Cerrar Sesion?</p>
+    <br/>
+    <button type="button" class="btn btn-default" (click)="confirm()">Si</button>
+    <button type="button" class="myButton" (click)="decline()">No</button>
+  </div>
+</ng-template>

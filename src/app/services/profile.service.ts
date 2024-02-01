@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Profile } from '../model/profile';
+import { environment } from '../environment';
 
 
 
@@ -12,31 +13,33 @@ import { Profile } from '../model/profile';
 
 export class ProfileService {
 
-  expURL = 'https://backendargprogh.onrender.com/profile/'
+
+  expURL = environment.apiUrl;
+
+  private fullURL = `${this.expURL}/profile/`;
 
 
   constructor(private httpClient: HttpClient) {
-
   }
 
   public lista(): Observable<Profile[]> {
-    return this.httpClient.get<Profile[]>(this.expURL + 'lista');
+    return this.httpClient.get<Profile[]>(this.fullURL + 'lista');
   }
 
   public detail(id: number): Observable<Profile> {
-    return this.httpClient.get<Profile>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Profile>(this.fullURL + `detail/${id}`);
   }
 
   public save(profile: Profile): Observable<any> {
-    return this.httpClient.post<any>(this.expURL + 'create', profile);
+    return this.httpClient.post<any>(this.fullURL + 'create', profile);
   }
 
   public update(id: number, profile: Profile): Observable<any> {
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, profile);
+    return this.httpClient.put<any>(this.fullURL + `update/${id}`, profile);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.fullURL + `delete/${id}`);
   }
 
 

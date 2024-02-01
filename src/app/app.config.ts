@@ -5,7 +5,8 @@ import { routes } from './app.routes';
 import { HttpClientModule, provideHttpClient, withInterceptorsFromDi, HTTP_INTERCEPTORS, withInterceptors } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
 import { interceptorProvider } from './interceptor/interceptor.service';
-import { SpinnerInterceptor, interceptorSpinner } from './interceptor/spinner.interceptor';
+import { interceptorSpinner } from './interceptor/spinner.interceptor';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -21,6 +22,7 @@ export const appConfig: ApplicationConfig = {
   ),
   provideToastr(),
   provideAnimations(),
+  importProvidersFrom(ModalModule.forRoot()),
   importProvidersFrom(BrowserAnimationsModule),
   importProvidersFrom(HttpClientModule),
     interceptorProvider,

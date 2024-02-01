@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Certification } from '../model/certification';
+import { environment } from '../environment';
 
 
 
@@ -11,33 +12,31 @@ import { Certification } from '../model/certification';
 
 export class CertificationService {
 
-    expURL = 'https://backendargprogh.onrender.com/certification/'
+    expURL = environment.apiUrl;
 
+    private fullURL = `${this.expURL}/certification/`;
 
     constructor(private httpClient: HttpClient) {
-
-
-
     }
 
     public lista(): Observable<Certification[]> {
-        return this.httpClient.get<Certification[]>(this.expURL + 'lista');
+        return this.httpClient.get<Certification[]>(this.fullURL + 'lista');
     }
 
     public detail(id: number): Observable<Certification> {
-        return this.httpClient.get<Certification>(this.expURL + `detail/${id}`);
+        return this.httpClient.get<Certification>(this.fullURL + `detail/${id}`);
     }
 
     public save(certification: Certification): Observable<any> {
-        return this.httpClient.post<any>(this.expURL + 'create', certification);
+        return this.httpClient.post<any>(this.fullURL + 'create', certification);
     }
 
     public update(id: number, certification: Certification): Observable<any> {
-        return this.httpClient.put<any>(this.expURL + `update/${id}`, certification);
+        return this.httpClient.put<any>(this.fullURL + `update/${id}`, certification);
     }
 
     public delete(id: number): Observable<any> {
-        return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+        return this.httpClient.delete<any>(this.fullURL + `delete/${id}`);
     }
 
 
