@@ -70,8 +70,6 @@
                             </div>
 
                             <div class="buttonsWork">
-
-
                                 <div>
 
                                     <div class="mb-1 input-group-sm">
@@ -211,15 +209,19 @@
 
             @for (proyect of Proyects; track $index) {
 
+
+            
+
             <div class="card mb-3">
 
                 <div class="row g-0">
-                    <div class="col-md-4" >
-                       
-                            <img [ngSrc]="proyect.image" class="img-fluid rounded-start img-position" alt="..." fill priority>
-                       
-                           
-                        
+                    <div class="col-md-4">
+
+                        <img [ngSrc]="proyect.image" class="img-fluid rounded-start img-position" alt="..." fill
+                            priority>
+
+
+
                         <div class="buttonsWork">
 
                             <button class="btnWork">
@@ -237,7 +239,8 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <div class="headerEdit">
-                                <h5 class="card-title">{{proyect.name}}</h5>
+                                <a  [routerLink]="['/proyects-details', proyect.id]">
+                                <h5 class="card-title">{{proyect.name}}</h5></a>
                                 @if (isAdmin()) {
 
                                 <div type="button" class="editCont" (click)="edit(proyect.id)">
