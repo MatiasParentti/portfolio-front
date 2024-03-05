@@ -14,12 +14,10 @@ import { ErrorResponseInterceptor } from './interceptor/error-response.intercept
 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes,withComponentInputBinding(),
-    withViewTransitions({
-
-    })),
+  providers: [provideRouter(routes, withComponentInputBinding(),
+    withViewTransitions()),
   provideHttpClient(
-    withInterceptorsFromDi(),withFetch(),withInterceptors([ErrorResponseInterceptor])
+    withInterceptorsFromDi(), withFetch(), withInterceptors([ErrorResponseInterceptor])
   ),
   provideToastr(),
   provideAnimations(),

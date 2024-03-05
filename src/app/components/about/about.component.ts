@@ -15,8 +15,8 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class AboutComponent {
 
-    @Input() session!: boolean;
-    @Input() isAdmin!: boolean;
+    @Input({required: true}) session!: boolean;
+    @Input({required: true}) isAdmin!: boolean;
 
     profiles: Profile[] = [];
     editProfile: any;
