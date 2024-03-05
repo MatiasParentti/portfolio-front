@@ -107,14 +107,14 @@
 .button {
   display: inline-block;
   background-color: #a2da5a;
-  color: #fff !important;
+  color: black !important;
   padding: 0.5rem 1.5rem;
   font-weight: 500;
   border-radius: 0.2rem;
   text-decoration: none;
 }
 .homeTitleColor {
-  color: #f7bb2a;
+  color: #ec9a49;
 }
 .homeTitle {
   font-size: 1.5rem;

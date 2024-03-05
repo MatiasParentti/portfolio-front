@@ -8,7 +8,7 @@ import { interceptorProvider } from './interceptor/interceptor.service';
 import { interceptorSpinner } from './interceptor/spinner.interceptor';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ErrorResponseInterceptor } from './interceptor/error-response.interceptor';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withHttpTransferCacheOptions } from '@angular/platform-browser';
 
 
 
@@ -26,7 +26,9 @@ export const appConfig: ApplicationConfig = {
   importProvidersFrom(BrowserAnimationsModule),
   importProvidersFrom(HttpClientModule),
     interceptorProvider,
-    interceptorSpinner, provideClientHydration()
+    interceptorSpinner, provideClientHydration(withHttpTransferCacheOptions({
+      includePostRequests: true
+    }))
   ],
 
 };

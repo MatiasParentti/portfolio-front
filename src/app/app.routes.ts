@@ -7,7 +7,7 @@ export const routes: Routes = [
 
     {
 
-        path: 'home',
+        path: '',
         title: 'Matias Parentti',
         loadComponent: () => import('./home-page/home-page.component'),
 
@@ -35,7 +35,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/',
         pathMatch: 'full'
     }
 
