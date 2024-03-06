@@ -16,7 +16,7 @@ import { ToastService } from '../../services/toast.service';
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.css',
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent {
 
     @Input() session!: boolean;
     @Input() isAdmin!: boolean;
@@ -75,13 +75,9 @@ export class ExperienceComponent implements OnInit {
             tareas: ['', [Validators.required]],
             empresa: ['', [Validators.required]],
         });
-    }
-
-
-
-    ngOnInit(): void {
         this.loadExperiences();
     }
+
 
     loadExperiences(): void {
         this.myExperience.lista().subscribe(

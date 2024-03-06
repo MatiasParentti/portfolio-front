@@ -14,7 +14,7 @@ import { NgOptimizedImage } from '@angular/common';
     templateUrl: './project.component.html',
     styleUrl: './project.component.css',
 })
-export class ProjectComponent implements OnInit {
+export class ProjectComponent {
 
     @Input() session!: boolean;
     @Input() isAdmin!: boolean;
@@ -22,15 +22,10 @@ export class ProjectComponent implements OnInit {
     Proyects: Proyect[] = []
 
     constructor(private myProyect: ProyectService) {
-
-    }
-
-    ngOnInit(): void {
-
         this.loadProyects();
-
     }
 
+   
     loadProyects(): void {
         this.myProyect.lista().subscribe(
             data => {

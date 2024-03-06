@@ -17,7 +17,7 @@ import { InputSytleService } from '../../services/inputSytle.service';
     templateUrl: './skills.component.html',
     styleUrl: './skills.component.css',
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent {
 
     @Input() session!: boolean;
     @Input() isAdmin!: boolean;
@@ -55,6 +55,8 @@ export class SkillsComponent implements OnInit {
 
 
         })
+
+        this.loadSkills();
     }
 
     toggleNewSkills(): void {
@@ -144,9 +146,5 @@ export class SkillsComponent implements OnInit {
         }
     }
 
-
-    ngOnInit(): void {
-        this.loadSkills();
-    }
 
 }

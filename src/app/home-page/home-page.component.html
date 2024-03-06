@@ -2,27 +2,49 @@
 
 @if (session()) {
 
+
+
 <div class="wrapper">
 
     <div class="container ">
         <div class="content">
+
+
             <app-banner-home></app-banner-home>
-            <app-about [session]="session()" [isAdmin]="isAdmin()"></app-about>
+           
+                <app-about [session]="session()" [isAdmin]="isAdmin()"></app-about>
+            
+            
             <app-education [session]="session()" [isAdmin]="isAdmin()"></app-education>
             <app-certification [session]="session()" [isAdmin]="isAdmin()"></app-certification>
             <app-experience [session]="session()" [isAdmin]="isAdmin()"></app-experience>
+
+
+            @defer (on viewport) {
             <app-skills [session]="session()" [isAdmin]="isAdmin()"></app-skills>
+            }@placeholder() {
+            <div>loading..</div>
+            }
+
+            @defer (on viewport) {
             <app-project [session]="session()" [isAdmin]="isAdmin()"></app-project>
+            }@placeholder() {
+            <div>loading..</div>
+            }
+
         </div>
         <div class="entry">ffdfdf</div>
+
+        @defer (on viewport) {
         <app-footer></app-footer>
+        }@placeholder {
+        <div></div>
+        }
+
     </div>
 
-
-
-
-
 </div>
+
 
 
 }@else {

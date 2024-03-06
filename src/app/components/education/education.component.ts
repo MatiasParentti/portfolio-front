@@ -15,7 +15,7 @@ import { MsgAlertService } from '../../services/msg-alert.service';
     templateUrl: './education.component.html',
     styleUrl: './education.component.css',
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent {
 
     @Input() session!: boolean;
     @Input() isAdmin!: boolean;
@@ -39,6 +39,7 @@ export class EducationComponent implements OnInit {
             programa: ['', [Validators.required]],
             estado: ['', [Validators.required]],
         });
+        this.loadEducation();
     }
 
     get Instituto() {
@@ -74,9 +75,7 @@ export class EducationComponent implements OnInit {
     }
 
 
-    ngOnInit(): void {
-        this.loadEducation();
-    }
+    
 
     // En tu componente.ts
     getInputStyle(control: AbstractControl | null): { [key: string]: string } {

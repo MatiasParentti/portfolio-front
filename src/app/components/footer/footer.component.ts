@@ -19,12 +19,9 @@ export class FooterComponent {
     profiles: Profile[] = [];
 
     constructor(private profileService: ProfileService) {
-
-    }
-
-    ngOnInit(): void {
         this.loadProfiles();
     }
+
 
     loadProfiles(): void {
         this.profileService.lista().subscribe(

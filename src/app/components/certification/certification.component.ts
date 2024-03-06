@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, type OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Certification } from '../../model/certification';
-import { TokenService } from '../../services/token.service';
 import { MsgAlertService } from '../../services/msg-alert.service';
 import { CertificationService } from '../../services/certification.service';
 import { ToastrService } from 'ngx-toastr';
@@ -17,7 +16,7 @@ import { ToastService } from '../../services/toast.service';
     templateUrl: './certification.component.html',
     styleUrl: './certification.component.css',
 })
-export class CertificationComponent implements OnInit {
+export class CertificationComponent{
 
     @Input() session!: boolean;
     @Input() isAdmin!: boolean;
@@ -41,11 +40,9 @@ export class CertificationComponent implements OnInit {
             instituto: ['', [Validators.required, Validators.maxLength(300), Validators.minLength(3)]],
             enlace: ['', [Validators.required]],
         });
-    }
-
-    ngOnInit(): void {
         this.loadCertifications();
     }
+
 
     loadCertifications(): void {
         this.myCertification.lista().subscribe(
