@@ -45,16 +45,12 @@ svg{
     border-color: #272727 ;
     color:#272727 !important;
   }
-  small{
-    color: #979797;
 
-}
-  
   .list-group-item{
     border: none;
   }
   .list-group-item p{
-    color: #5e595e;
+    color: black;
   }
   .delete{
     

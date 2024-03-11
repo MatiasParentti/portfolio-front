@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, type OnInit } from '@angular/core';
+import { Component, signal} from '@angular/core';
 import { TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { TokenService } from '../../services/token.service';

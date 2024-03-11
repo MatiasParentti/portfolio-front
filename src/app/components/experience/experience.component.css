@@ -11,9 +11,7 @@
     transition: background-color .4s ease-in-out,border-color .4s ease-in-out;
 }
 
-small{
-    color: #979797;
-}
+
   .header svg{
     width: 20px;
     height:20px;
@@ -33,7 +31,7 @@ small{
    margin-right: 10px;
   }
   .exp3 p{
-    color: #5e595e;
+    color: black;
    }
 
 
