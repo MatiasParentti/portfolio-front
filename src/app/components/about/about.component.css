@@ -1,3 +1,18 @@
+.loader {
+  margin-top: 10px;
+  color: #272727;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  background: #fff;
+  border: 1px solid #dde0e5;
+  box-shadow: 0 2px 20px rgba(212, 216, 232, .52);
+  padding: 2rem;
+  border-radius: 4px;
+  transition: background-color .4s ease-in-out, border-color .4s ease-in-out;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
 .about {
   margin-top: 10px;
   color: #272727;
@@ -139,6 +154,11 @@ img {
     margin-right: 2rem;
     margin-left: 2rem;
   }
+
+  .loader {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -146,6 +166,13 @@ img {
   .about {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .loader {
+
+    margin-left: 2rem;
+    margin-right: 2rem;
+    aspect-ratio: 1/1;
   }
 
 }
@@ -157,5 +184,10 @@ img {
     margin-left: 0rem;
   }
 
+  .loader {
+    margin-right: 0rem;
+    margin-left: 0rem;
+    aspect-ratio: 2/3;
+  }
 
 }

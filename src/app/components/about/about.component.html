@@ -1,5 +1,5 @@
 
-@defer (on immediate) {
+@defer (on timer(1s)) {
   @for (profile of profiles; track $index) {
 
     <div class="about">
@@ -38,6 +38,8 @@
     }
     
 }@placeholder {
-  <div></div>
+  <div class="loader">
+    <div>loading...</div>
+  </div>
 }
 
