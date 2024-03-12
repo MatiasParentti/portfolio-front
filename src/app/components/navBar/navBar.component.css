@@ -34,7 +34,7 @@
   position: fixed;
   width: 100%;
   z-index: 6;
-  background-color:#f7f8fc;
+  background-color: #f7f8fc;
   top: 0;
   right: 0;
   left: 0;
@@ -107,13 +107,13 @@ a:hover {
 }
 
 #menu-btn:hover {
-  color: #ec9a49;  
+  color: #ec9a49;
 }
 
 img {
   width: 25px;
   height: 25px;
-
+  aspect-ratio: 1/1;
 }
 
 @media screen and (max-width: 767px) {
@@ -157,7 +157,7 @@ img {
   }
 
   .navContainer .linkGroup a:hover {
-  
+
     color: #ec9a49;
   }
 

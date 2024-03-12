@@ -12,11 +12,12 @@ import { TokenService } from '../../../services/token.service';
 import { BannerHomeComponent } from '../../../components/banner-home/banner-home.component';
 import { InputSytleService } from '../../../services/inputSytle.service';
 import { NgOptimizedImage } from '@angular/common';
+import { ScrollToTopButtonComponent } from '../../../components/scroll-to-top-button/scroll-to-top-button.component';
 @Component({
     selector: 'app-proyects',
     standalone: true,
     imports: [
-        CommonModule,NgOptimizedImage, BannerHomeComponent, RouterLink, RouterOutlet, NavBarComponent, FooterComponent, FormsModule, ReactiveFormsModule
+        CommonModule,NgOptimizedImage,ScrollToTopButtonComponent, BannerHomeComponent, RouterLink, RouterOutlet, NavBarComponent, FooterComponent, FormsModule, ReactiveFormsModule
     ],
     templateUrl: './proyects.component.html',
     styleUrl: './proyects.component.css',
@@ -30,9 +31,9 @@ export default class ProyectsComponent {
     newProyect = false;
     editProyect = false;
     editId: number = 0;
-    public style = signal(this.inputStyle)
-    public session = signal(false)
-    isAdmin = signal(false)
+    style = signal(this.inputStyle)
+    session = signal<boolean>(false)
+    isAdmin = signal<boolean>(false)
 
     get nameControl() {
         return this.form.get("name");
@@ -97,7 +98,7 @@ export default class ProyectsComponent {
         })
 
 
-
+       
     }
 
     ngOnInit(): void {

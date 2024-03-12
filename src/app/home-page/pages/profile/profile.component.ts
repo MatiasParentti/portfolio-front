@@ -9,12 +9,13 @@ import { ToastService } from '../../../services/toast.service';
 import { InputSytleService } from '../../../services/inputSytle.service';
 import { TokenService } from '../../../services/token.service';
 import { BannerHomeComponent } from '../../../components/banner-home/banner-home.component';
+import { ScrollToTopButtonComponent } from '../../../components/scroll-to-top-button/scroll-to-top-button.component';
 
 @Component({
     selector: 'app-profile',
     standalone: true,
     imports: [
-        CommonModule, NavBarComponent, FooterComponent,BannerHomeComponent,ReactiveFormsModule
+        CommonModule, NavBarComponent,ScrollToTopButtonComponent, FooterComponent,BannerHomeComponent,ReactiveFormsModule
     ],
     templateUrl: './profile.component.html',
     styleUrl: './profile.component.css',

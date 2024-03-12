@@ -12,13 +12,14 @@ import { CertificationComponent } from '../components/certification/certificatio
 import { ExperienceComponent } from '../components/experience/experience.component';
 import { SkillsComponent } from '../components/skills/skills.component';
 import { ProjectComponent } from '../components/project/project.component';
+import { ScrollToTopButtonComponent } from '../components/scroll-to-top-button/scroll-to-top-button.component';
 
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     imports: [
-        CommonModule, ProjectComponent, RouterOutlet, FooterComponent, NavBarComponent, LoginComponent, BannerHomeComponent, AboutComponent, EducationComponent, CertificationComponent, ExperienceComponent, SkillsComponent
+        CommonModule, ScrollToTopButtonComponent, ProjectComponent, RouterOutlet, FooterComponent, NavBarComponent, LoginComponent, BannerHomeComponent, AboutComponent, EducationComponent, CertificationComponent, ExperienceComponent, SkillsComponent
     ],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css',
@@ -27,13 +28,12 @@ import { ProjectComponent } from '../components/project/project.component';
 
 export default class HomePageComponent implements OnInit {
 
-    public session = signal(false)
+    session = signal<boolean>(false)
     roles!: string[];
-    isAdmin = signal(false)
+    isAdmin = signal<boolean>(false)
 
 
     constructor(private tokenService: TokenService) {
-
     }
 
     ngDoCheck() {
@@ -41,8 +41,7 @@ export default class HomePageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.checkSession();
-
+        // this.checkSession();
     }
 
     private checkSession(): void {
